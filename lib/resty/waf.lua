@@ -586,6 +586,7 @@ function _M.new()
 		_debug_log_level             = ngx_INFO,
 		_deny_status                 = ngx_HTTP_FORBIDDEN,
 		_event_log_altered_only      = true,
+		_event_log_app_name 				 = nil,
 		_event_log_buffer_size       = 4096,
 		_event_log_level             = ngx_INFO,
 		_event_log_ngx_vars          = {},

@@ -19,7 +19,7 @@ services:
     - memcached
     - redis
 install:
-    - cpanm -v --notest Test::Nginx Test::More Exporter::Declare Test::Exception Test::MockModule;
+    - cpanm -v --notest Test::Nginx Test::More Exporter::Declare Test::Exception Test::MockModule Path::Tiny;
 before_script:
     - export PATH=/usr/local/openresty/bin/:$PATH
     - sudo apt-get update -q

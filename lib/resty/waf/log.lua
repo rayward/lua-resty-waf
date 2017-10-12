@@ -63,7 +63,13 @@ _M.write_log_events = {
 			return
 		end
 
-		f:write(cjson.encode(t), "\n")
+		msg = cjson.encode(t) .. "\n"
+
+		if waf._event_log_app_name then
+			msg = waf._event_log_app_name .. ": " .. msg
+		end
+
+		f:write(msg)
 		f:close()
 	end,
 	socket = function(waf, t)
@@ -80,7 +86,13 @@ _M.write_log_events = {
 			})
 		end
 
-		socket_logger.log(cjson.encode(t) .. "\n")
+		msg = cjson.encode(t) .. "\n"
+
+		if waf._event_log_app_name then
+			msg = waf._event_log_app_name .. ": " .. msg
+		end
+
+		socket_logger.log(msg)
 	end
 }
 
