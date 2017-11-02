@@ -608,6 +608,7 @@ function _M.new()
 		_mode                        = 'SIMULATE',
 		_nameservers                 = {},
 		_pcre_flags                  = 'oij',
+		_process_body                = true,
 		_process_multipart_body      = true,
 		_req_tid_header              = false,
 		_res_body_max_size           = (1024 * 1024),

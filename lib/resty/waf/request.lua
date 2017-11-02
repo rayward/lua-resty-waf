@@ -13,6 +13,11 @@ local table_insert = table.insert
 _M.version = base.version
 
 function _M.parse_request_body(waf, request_headers, collections)
+    if not waf._process_body then
+        --_LOG_"process_body option disabled, ignoring the body"
+        return nil
+    end
+
 	local content_type_header = request_headers["content-type"]
 
 	-- multiple content-type headers are likely an evasion tactic
