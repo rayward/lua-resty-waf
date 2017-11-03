@@ -16,5 +16,5 @@ dependencies = {
 }
 build = {
    type = "make",
-   install_target = "install-hard",
+   install_target = "install",
 }
